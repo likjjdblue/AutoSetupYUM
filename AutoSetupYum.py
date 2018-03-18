@@ -124,6 +124,7 @@ def setupLocalYumRepo():
 
     subprocess.call('setenforce 0',shell=True)
     subprocess.call('firewall-cmd --zone=public --add-port=18888/tcp --permanent',shell=True)
+    subprocess.call('firewall-cmd --reload',shell=True)
     print (TextColorGreen+'成功安装apache.\n现在可以新建一个SSH 连接,并运行systemctl start httpd.'+TextColorWhite)
 
 
